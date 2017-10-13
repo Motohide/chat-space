@@ -1,0 +1,43 @@
+%body
+  .header
+    %h2
+    チャットグループが作成されました。
+    .contents
+      .contents__left-content
+
+        .contents__left-content__user-name-box
+          .contents__left-content__user-name-box__user-name
+
+          .contents__left-content__icon
+            = link_to root_path do
+              %i.fa.fa-pencil-square-o
+            = link_to root_path do
+              %i.fa.fa-cog
+        .contents__left-content__group-list
+
+          .contents__left-content__group-list__group
+            %h3 サンプル
+            %p よろしくお願いします
+
+      .contents__right-content
+
+        .contents__right-content__group-title
+          .contents__right-content__group-title__edit edit
+          %h2.contents__right-content__group-title__group-name あああああ
+          %h2.contents__right-content__group-title__group-members いいいいい
+
+        .contents__right-content__main-space
+          .contents__right-content__main-space__chat
+            .contents__right-content__main-space__chat__upper
+              %h2.contents__right-content__main-space__chat__upper__user-name うううううう
+              %p.contents__right-content__main-space__chat__upper__date
+            .contents__right-content__main-space__chat__lower
+              %p.contents__right-content__main-space__chat__lower__massage ええええええ
+
+        .contents__right-content__post-space
+          %form
+            %input{type: "text", placeholder: "  type a message",class: "text"}
+            .image
+              %label
+                %i.fa.fa-image
+            .contents__right-content__post-space__sent Sent

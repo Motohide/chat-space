@@ -1,13 +1,10 @@
-.alert{
- text-align: center;
-}
-
-.alert--success{
-  background-color: $blue-color;
+.flash {
   color: $white-color;
-}
-
-.alert--error{
-  background-color: $orange-color;
-  color: $white-color;
+  text-align: center;
+  &__alert{
+    background-color: $orange-color;
+  }
+  &__notice {
+    background-color: $blue-color;
+  }
 }

@@ -6,9 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.user_id = current_user.id
-
+    @message = current_user.messages.new(message_params)
     @groups = current_user.groups
     if @message.save
       redirect_to action: :index

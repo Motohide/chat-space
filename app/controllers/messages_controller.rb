@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = current_user.messages.new(message_params)
-    @groups = current_user.groups
+    @groups
     if @message.save
       redirect_to action: :index
     else

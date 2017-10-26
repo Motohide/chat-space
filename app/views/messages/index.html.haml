@@ -1,7 +1,7 @@
 .contents.clearfix
   .left-contents
     .left-contents-top
-      %icon
+      %p
         = current_user.username
       = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
@@ -9,28 +9,38 @@
         %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
-      = render 'groups/group/'
+      = render partial: "groups/group", collection: @groups
 
   .right-contents
     .right-contents-top
       .group
         .group-name
-          %h2  a
+          %h2
+            = @group.name
         .group-member
           %p
-            あ
-      .edit
-        %p
-          Edit
+            member:
+            = @group.users.pluck(:username).join(" ")
+      = link_to edit_group_path(@group) do
+        .edit
+          %p
+            Edit
     .right-contents-middle
-      .message-title
-        %h3 あ
-      .message-text
+      - @group.messages.each do |i|
+        .message
+          .message-top
+            .message-name
+              = current_user.username
+            .message-time
+              = current_user.created_at.strftime("%Y/%m/%d %H:%M")
+          .message-text
+            = i.text
+            -if i.image.present?
+              = image_tag(i.image)
     .right-contents-bottom
-      %form
-        %input.text{placeholder: 'type a message', type: 'text'}/
-        %i.fa.fa-picture-o{'aria-hidden': 'true'}
-      .send
-        %p
-          Send
-
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, placeholder: 'type a message', class: "text"
+        %label
+          .fa.fa-picture-o{'aria-hidden': 'true'}
+          = f.file_field :image, class: "message_image"
+        = f.submit "Send", class: "send"

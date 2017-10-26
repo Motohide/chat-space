@@ -1,5 +1,6 @@
-.left-content__group-list
-  - current_user.groups.each do |group|
-    .left-content__group-list-list
-      .left-content__group-list-list-name #{group.name}
-      .left-content__group-list-list-message まだメッセージはありません
+.group-blocks
+  = link_to group_messages_path(group.id) do
+    .group-name
+      = group.name
+    .group-text
+      = group.last_message

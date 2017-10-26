@@ -27,12 +27,10 @@
           color: $white-color;
           display: inline-block;
           padding-top: 40px;
-          float: right;
         }
         .fa-pencil-square-o{
           color: $white-color;
           display: inline-block;
-          padding-top: 40px;
         }
       }
     }
@@ -43,20 +41,26 @@
       height: 870px;
       display: block;
 
-     .group-blocks{
-       background-color: $side-color;
-       width: 300px;
-       height: 100px;
-       display: block;
-       clear: both;
+      .group-blocks{
+         background-color: $side-color;
+         width: 260px;
+         height: 46px;
+         padding: 20px 0 40px;
+         display: block;
+         clear: both;
+         color: white;
+          a {
+          color: $white-color;
+          text-decoration: none;
+          }
 
-        &-name{
-         font-size: 15px;
-        }
-        &-text{
-          font-size: 11px
+          &-name{
+           font-size: 15px;
+          }
+          &-text{
+            font-size: 11px;
 
-        }
+          }
       }
     }
   }
@@ -104,24 +108,36 @@
         }
       }
     }
-    .right-contents-middle{
+    &-middle{
       background-color: #F7F7F7;
-      padding: 0 40px;
       height: calc(100vh - 100px - 90px - 23px); //flashmessage
       display: block;
+      padding: 40px, 40px, 0 40px;
       clear: both;
       .message{
-        &-name{
-          h3{
-           font-size: 16px;
-           font-weight: bold;
-           margin-top: 46px;
+        height: 55px;
+        padding: 0 40px;
+        margin-bottom: 40px;
+        margin-top: 46px;
+        &-top{
+          .message-name{
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            float: left;
+          }
+          .message-time{
+            font-size: 12px;
+            color: #DDDDDD;
+            padding: 0 0 0 20px;
+            float: left;
           }
         }
         &-text{
-          p{
           font-size: 14px;
-          }
+          font-color: $white-color;
+          padding-bottom: 10px;
+          clear: both;
         }
       }
     }
@@ -139,23 +155,27 @@
         margin: 0 10px 0 0;
         float: left;
       }
-        .fa-picture-o {
-         position: absolute;
-         right: 190px;
-         top: 40px;
+        label{
+          .fa-picture-o {
+           position: absolute;
+           right: 190px;
+           top: 40px;
+          }
+          .message_image{
+            display:none;
+          }
         }
 
-
-      .send{
-        background-color: $blue-color;
+      .send {
+        background-color: #38AEF0;
+        color: $white-color;
         float: right;
         margin: 0 0 0 10px;
         padding: 0px 30px;
         height: 50px;
-        p{
-         text-align: center;
-         padding: 10px 0;
-        }
+        width: 100px;
+        text-align: center;
+        border: 0px;
       }
     }
   }

@@ -15,6 +15,12 @@ describe Message do
       expect(message).to be_valid
     end
 
+    it "is invalid without a image, a text" do
+      message = build(:message, image: nil, text: nil)
+      message.valid?
+      expect(message.errors[:text_or_image]).to include("を入力してください")
+    end
+
     it "is invalid without a group_id" do
       message = build(:message, group_id: nil)
       message.valid?

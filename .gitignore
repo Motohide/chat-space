@@ -17,3 +17,7 @@
 .byebug_history
 
 *.png
+
+spec/images/test.jpg
+
+*.jpg

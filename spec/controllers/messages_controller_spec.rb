@@ -8,30 +8,32 @@ describe MessagesController, type: :controller do
   describe 'GET #index' do
     before do
       login_user user
+    end
 
+    def shered
+      get :index, params: { group_id: group.id }
     end
 
     it "assigns the requested contact to @group" do
-      get :index, params: { group_id: group.id }
+      shered
       expect(assigns(:group)).to eq group
     end
 
     it "assigns the requested contact to @message" do
-      get :index, params: { group_id: group }
+      shered
       expect(assigns(:message)).to be_a_new(Message)
     end
 
     it "assigns the requested contact to @groups " do
-      get :index, params: { group_id: group.id }
+      shered
       groups = user.groups
       expect(assigns(:groups)).to eq groups
     end
 
     it "renders the :index template" do
-      get :index, params: { group_id: group.id }
+      shered
       expect(response).to render_template :index
     end
-
   end
 
   describe 'GET #index' do
@@ -39,7 +41,6 @@ describe MessagesController, type: :controller do
     get :index, params: { group_id: group.id }
     expect(response).to redirect_to new_user_session_path
     end
-
   end
 
   describe 'POST #create' do

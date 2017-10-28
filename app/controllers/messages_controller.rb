@@ -9,7 +9,10 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(message_params)
     @groups
     if @message.save
-      redirect_to action: :index
+      respond_to do |format|
+      format.html { redirect_to group_messages_path(params[:group_id])  }
+      format.json
+      end
     else
       flash[:alert] = 'メッセージを入力してください'
       render :index

@@ -1,0 +1,189 @@
+.contents {
+   list-style: none;
+   margin: 0;
+
+  .left-contents {
+    background-color: $blue-color;
+    color: $white-color;
+    float: left;
+    text-align: left;
+    width: 300px;
+    height: 100%;
+
+    &-top{
+      background-color: $black-color;
+      width: 300px;
+      height: 100px;
+      display: block;
+      p{
+        padding: 40px 20px;
+        text-align: left;
+        width: 110px;
+        font-size: 16px;
+        float: left;
+      }
+      a{
+        .fa-cog:before{
+          color: $white-color;
+          display: inline-block;
+          padding-top: 40px;
+        }
+        .fa-pencil-square-o{
+          color: $white-color;
+          display: inline-block;
+        }
+      }
+    }
+
+    .left-contents-bottom{
+      background-color: $side-color;
+      padding:0 20px;
+      height: calc(100vh - 100px);
+      width: 260px;
+      display: block;
+
+      .group-blocks{
+         background-color: $side-color;
+         width: 260px;
+         height: 46px;
+         padding: 20px 0 40px;
+         display: block;
+         clear: both;
+         color: white;
+          a {
+          color: $white-color;
+          text-decoration: none;
+          }
+
+          &-name{
+           font-size: 15px;
+          }
+          &-text{
+            font-size: 11px;
+
+          }
+      }
+    }
+  }
+
+
+  .right-contents {
+    background-color: $white-color;
+    color: #434A54;
+    float: right;
+    text-align: left;
+    width: calc(100vw - 300px);
+    height: 100%;
+
+    &-top{
+      background-color: $white-color;
+      padding: 0 40px;
+      display: block;
+      .group{
+       float: left;
+       &-name{
+         font-size: 20px;
+         font: #333333;
+         text-align: left;
+         margin-top: 35px;
+         width: 700px;
+       }
+       &-member{
+         font-size: 12px;
+         font: #999999;
+         text-align: left;
+         margin-top: 15px;
+         width: 700px;
+       }
+      }
+      .edit{
+        margin-top: 28px;
+        height: 40px;
+        float: right;
+
+        p{
+          padding: 10px 20px;
+          color: #38AEF0;
+          border-style: solid;
+          border-width: 1px
+        }
+      }
+    }
+    &-middle{
+      background-color: #F7F7F7;
+      height: calc(100vh - 100px - 90px - 23px);
+      display: block;
+      padding: 40px, 40px, 0 40px;
+      clear: both;
+      .message{
+        height: 55px;
+        padding: 0 40px;
+        margin-bottom: 40px;
+        margin-top: 46px;
+        &-top{
+          .message-name{
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            float: left;
+          }
+          .message-time{
+            font-size: 12px;
+            color: #DDDDDD;
+            padding: 0 0 0 20px;
+            float: left;
+          }
+        }
+        &-text{
+          font-size: 14px;
+          font-color: $white-color;
+          padding-bottom: 10px;
+          clear: both;
+        }
+      }
+    }
+    .right-contents-bottom{
+      background-color: #DDDDDD;
+      padding: 20px 40px 20px 40px;
+      height: 90px;
+      display: block;
+      position: relative;
+
+      .text{
+        width: calc(100% - 150px);
+        height: 50px;
+        padding: 0 0 0 10px;
+        margin: 0 10px 0 0;
+        float: left;
+      }
+        label{
+          .fa-picture-o {
+           position: absolute;
+           right: 190px;
+           top: 40px;
+          }
+          .message_image{
+            display:none;
+          }
+        }
+
+      .send {
+        background-color: #38AEF0;
+        color: $white-color;
+        float: right;
+        margin: 0 0 0 10px;
+        padding: 0px 30px;
+        height: 50px;
+        width: 100px;
+        text-align: center;
+        border: 0px;
+      }
+    }
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}

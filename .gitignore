@@ -21,3 +21,7 @@
 spec/images/test.jpg
 
 *.jpg
+
+public/uploads/message/image/31/images.jpeg
+
+*.jpeg

@@ -24,8 +24,6 @@ $(document).on('turbolinks:load', function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    //var input = $('this').attr('action');
-    //console.log(location.href);
     $.ajax({
       type: 'POST',
       url: location.href,

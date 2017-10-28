@@ -38,7 +38,8 @@
     .left-contents-bottom{
       background-color: $side-color;
       padding:0 20px;
-      height: 870px;
+      height: calc(100vh - 100px);
+      width: 260px;
       display: block;
 
       .group-blocks{
@@ -85,14 +86,14 @@
          font: #333333;
          text-align: left;
          margin-top: 35px;
-         width: 100px;
+         width: 700px;
        }
        &-member{
          font-size: 12px;
          font: #999999;
          text-align: left;
          margin-top: 15px;
-         width: 100px;
+         width: 700px;
        }
       }
       .edit{

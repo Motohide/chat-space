@@ -21,3 +21,8 @@
 spec/images/test.jpg
 
 *.jpg
+
+public/
+
+*.jpeg
+

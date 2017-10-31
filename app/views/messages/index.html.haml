@@ -27,7 +27,7 @@
             Edit
     .right-contents-middle
       - @group.messages.each do |i|
-        .message
+        .message{"data-message-id": i.id }
           .message-top
             .message-name
               = current_user.username

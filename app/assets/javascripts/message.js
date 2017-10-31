@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
 
   function appendProduct(message) {
     var image = (message.image.url) ? `<img src = ${ message.image.url }>` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message-top">
                     <div class="message-name">
                       ${ message.name }
@@ -33,7 +33,6 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = appendProduct(data);
       $('.right-contents-middle').append(html)
       $('.send').removeAttr('disabled');
@@ -44,4 +43,26 @@ $(document).on('turbolinks:load', function(){
       alert('送信に失敗しました');
     });
   });
+     setInterval(function(){
+        var message = $('.message').last().data('message-id');
+
+        var url = $(location).attr('href')
+
+        $.ajax({
+          type: 'GET',
+          url: url,
+          data: { id: message},
+          dataType: 'json'
+        })
+
+        .done(function(data){
+          console.log(data);
+          data.forEach(function(message){
+            var html = appendProduct(message);
+          $('.right-contents-middle').append(html);
+          $('.send').removeAttr('disabled');
+          $('.right-contents-middle').animate({scrollTop: $('.right-contents-middle')[0].scrollHeight}, 'fast');
+          })
+        })
+      },5000);
 });

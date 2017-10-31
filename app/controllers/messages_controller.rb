@@ -3,6 +3,11 @@ class MessagesController < ApplicationController
   def index
     @groups = current_user.groups
     @message = Message.new
+    @messages = Message.where(Message.arel_table[:id].gt(params[:id]))
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
